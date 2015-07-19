@@ -28,7 +28,7 @@ Find below a quick summary of how HTTP verbs are used in the API:
 | `PUT`    | Used to perform a full update of a resource (replacing the resource by the JSON data provided in the request).
 | `DELETE` | Used for deleting resources.
 
-`HEAD` and `PATCH` are not currently used.
+`HEAD` et `PATCH` ne sont actuellement pas utilisés.
 
 ### Authentication
 
@@ -47,4 +47,6 @@ To interact with the API, your client will need to be authenticated for few reso
 
 ### Errors
 
-The errors are not properly handled at the moment. Do not try to have errors!
+401/403 - Accès à cette ressource non autorisé car n'a pas les droits, ou n'est pas connecté.
+404 - Lorsqu'une ressource n'est pas trouvée ou existante, un status 404 est envoyé au client.
+500 - Une erreur du serveur.
