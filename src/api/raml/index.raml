@@ -1,0 +1,131 @@
+#%RAML 0.8
+---
+title: API Resource
+baseUri: https://localhost/api/
+protocols: [HTTPS]
+mediaType: application/json
+
+traits:
+  - auth: !include _traits/auth.raml
+
+/users:
+  description: User resource.
+  get:
+    is: [auth: { roles: 'staff' }]
+    description: Retrive the list of the users.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              [
+                {
+                  "id": "54d8ae163fd30364605c81a4",
+                  "firstname": "Romain",
+                  "lastname": "Terieur",
+                  "phone": "+6624582",
+                  "roles": [
+                    "citizen"
+                  ]
+                },
+                {
+                  "id": "54d8ae163fd30364605c81a9",
+                  "firstname": "Romain",
+                  "lastname": "Terieur",
+                  "phone": "+8211332",
+                  "roles": [
+                    "citizen",
+                    "staff"
+                  ]
+                },
+                ...
+              ]
+  post:
+    description: Create a new user.
+    body:
+      application/json:
+        example: |
+          {
+            "firstname": "Romain",
+            "lastname": "Terieur",
+            "phone": "+6624582",
+            "roles": [
+              "citizen"
+            ]
+          }
+    responses:
+      201:
+        body:
+          application/json:
+            example: |
+              {
+                "id": "54d8ae163fd30364605c81a4",
+                "firstname": "Romain",
+                "lastname": "Terieur",
+                "phone": "+6624582",
+                "roles": [
+                  "citizen"
+                ]
+              }
+
+  /{id}:
+    get:
+      is: [auth: {roles: 'any'} ]
+      description: Retrieve the details of a specific user.
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "id": "54d8ae163fd30364605c81a4",
+                  "firstname": "Romain",
+                  "lastname": "Terieur",
+                  "phone": "+6624582",
+                  "roles": [
+                    "citizen"
+                  ]
+                }
+    put:
+      is: [auth: {roles: 'staff'} ]
+      description: Update the details of a specific user.
+      body:
+        application/json:
+          example: |
+            {
+              "firstname": "Romain",
+              "lastname": "Terieur",
+              "phone": "+6624582",
+              "roles": [
+                "citizen"
+              ]
+            }
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "id": "54d8ae163fd30364605c81a4",
+                  "firstname": "Romain",
+                  "lastname": "Terieur",
+                  "phone": "+6624582",
+                  "roles": [
+                    "citizen"
+                  ]
+                }
+    delete:
+      is: [auth: {roles: 'staff'} ]
+      description: Delete a specific user.
+      responses:
+        204:
+          body:
+
+/data:
+  description: Data resource.
+  /populate:
+    post:
+      description: Allow to populate random data to have a starting situation.
+      responses:
+        200:
+          body:
