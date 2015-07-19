@@ -1,6 +1,6 @@
-# Smart City - Citizen Engagement - Doc Skeleton
+# TB2015_API-Doc
 
-*Documentation of the API of the Citizen Engagement*
+*Documentation of the API of TB2015 - Booking Prototype*
 
 This is a generator that compiles [Markdown][md] and [RAML][raml] files into a
 static site. The following [Node.js][node] stack is used:
