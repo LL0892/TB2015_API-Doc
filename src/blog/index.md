@@ -2,5 +2,5 @@
 title: Blog
 sectionName: Blog
 template: blog.jade
-menuIndex: 2
+menuIndex: 3
 ---

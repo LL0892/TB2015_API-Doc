@@ -2,7 +2,7 @@
 title: Overview
 sectionName: API Reference
 template: api.jade
-menuIndex: 3
+menuIndex: 2
 ---
 
 Cette page contient la documentation générale sur l'API. Utilisez les liens à la droite pour naviguer aux ressources voulues.
