@@ -1,0 +1,287 @@
+description: User resource.
+get:
+  is: [auth: { roles: 'staff' }]
+  description: Retrieve the list of the users.
+  responses:
+    200:
+      body:
+        application/json:
+          example: |
+            [
+              {
+                "id": "54d8ae163fd30364605c81a4",
+                "firstname": "Romain",
+                "lastname": "Terieur",
+                "email": "mail@mail.com",
+                "dateOfBirth": "",
+                "gender": "homme",
+                "roles": [
+                  "user", "staff"
+                ],
+                "staffId": "54d8ae163fd30364605c81a5",
+                "businessId": "54d8ae163fd30364605b45b5",
+                "phone": "+41 79 123 45 67",
+                "mobile": "+41 79 123 45 67",
+                "city": "Neuchâtel",
+                "street": "une rue",
+                "canton": "NE",
+                "zip": "2000",
+                "imageProfileURL": "userPlaceholder.png"
+              },
+              {
+                "id": "54d8ae163fd30364605c81a9",
+                "firstname": "Christophe",
+                "lastname": "Deplane",
+                "email": "mail@mail.com",
+                "dateOfBirth": "",
+                "gender": "homme",
+                "roles": [
+                  "user"
+                ],
+                "phone": "+41 79 123 45 67",
+                "mobile": "+41 79 123 45 67",
+                "city": "Neuchâtel",
+                "street": "une rue",
+                "canton": "NE",
+                "zip": "2000",
+                "imageProfileURL": "userPlaceholder.png"
+              },
+            ]
+post:
+  description: Create a new user profile.
+  body:
+    application/json:
+      example: |
+        {
+          "password": "mdp"
+          "firstname": "Romain",
+          "lastname": "Terieur",
+          "email": "mail@mail.com",
+          "dateOfBirth": "",
+          "gender": "homme",
+          "phone": "+41 79 123 45 67",
+          "mobile": "+41 79 123 45 67",
+          "city": "Neuchâtel",
+          "street": "une rue",
+          "canton": "NE",
+          "zip": "2000",
+          "imageProfileURL": "userPlaceholder.png"
+        }
+  responses:
+    201:
+      body:
+        application/json:
+          example: |
+            {
+              "id": "54d8ae163fd30364605c81a4",
+              "firstname": "Romain",
+              "lastname": "Terieur",
+              "email": "mail@mail.com",
+              "dateOfBirth": "",
+              "gender": "homme",
+              "roles": [
+                "user"
+              ],
+              "staffId": "54d8ae163fd30364605c81a5",
+              "businessId": "54d8ae163fd30364605b45b5",
+              "phone": "+41 79 123 45 67",
+              "mobile": "+41 79 123 45 67",
+              "city": "Neuchâtel",
+              "street": "une rue",
+              "canton": "NE",
+              "zip": "2000",
+              "imageProfileURL": "userPlaceholder.png"
+            }
+
+/manager:
+  post:
+    description: Create a new user with manager role.
+    body:
+      application/json:
+        example: |
+          {
+            "password": "mdp"
+            "firstname": "Romain",
+            "lastname": "Terieur",
+            "email": "mail@mail.com",
+            "dateOfBirth": "",
+            "gender": "homme",
+            "phone": "+41 79 123 45 67",
+            "mobile": "+41 79 123 45 67",
+            "city": "Neuchâtel",
+            "street": "une rue",
+            "canton": "NE",
+            "zip": "2000",
+            "imageProfileURL": "userPlaceholder.png"
+          }
+    responses:
+      201:
+        body:
+          application/json:
+            example: |
+              {
+                "id": "54d8ae163fd30364605c81a4",
+                "firstname": "Romain",
+                "lastname": "Terieur",
+                "email": "mail@mail.com",
+                "dateOfBirth": "",
+                "gender": "homme",
+                "roles": [
+                  "user", "staff"
+                ],
+                "staffId": "54d8ae163fd30364605c81a5",
+                "businessId": "54d8ae163fd30364605b45b5",
+                "phone": "+41 79 123 45 67",
+                "mobile": "+41 79 123 45 67",
+                "city": "Neuchâtel",
+                "street": "une rue",
+                "canton": "NE",
+                "zip": "2000",
+                "imageProfileURL": "userPlaceholder.png"
+              }
+
+/me:
+  get:
+    is: [auth: { roles: 'user' }]
+    description: Get my user profile
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "id": "54d8ae163fd30364605c81a4",
+                "firstname": "Romain",
+                "lastname": "Terieur",
+                "email": "mail@mail.com",
+                "dateOfBirth": "",
+                "gender": "homme",
+                "roles": [
+                  "user", "staff"
+                ],
+                "staffId": "54d8ae163fd30364605c81a5",
+                "businessId": "54d8ae163fd30364605b45b5",
+                "phone": "+41 79 123 45 67",
+                "mobile": "+41 79 123 45 67",
+                "city": "Neuchâtel",
+                "street": "une rue",
+                "canton": "NE",
+                "zip": "2000",
+                "imageProfileURL": "userPlaceholder.png"
+              }
+  put:
+    is: [auth: {roles: 'user'} ]
+    description: Update the details of my user profile.
+    body:
+      application/json:
+        example: |
+          {
+            "firstname": "Romain",
+            "lastname": "Terieur",
+            "phone": "+6624582",
+            "roles": [
+              "citizen"
+            ]
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "id": "54d8ae163fd30364605c81a4",
+                "firstname": "Romain",
+                "lastname": "Terieur",
+                "phone": "+6624582",
+                "roles": [
+                  "citizen"
+                ]
+              }
+
+/{userId}:
+  get:
+    is: [auth: {roles: 'any'} ]
+    description: Retrieve the details of a specific user.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "id": "54d8ae163fd30364605c81a4",
+                "firstname": "Romain",
+                "lastname": "Terieur",
+                "phone": "+6624582",
+                "roles": [
+                  "citizen"
+                ]
+              }
+
+  delete:
+    is: [auth: {roles: 'admin'} ]
+    description: Delete a specific user.
+    responses:
+      204:
+        body:
+
+/{userId}/password:
+  put:
+    is: [auth: {roles: 'user'} ]
+    description: Update my password.
+    body:
+      application/json:
+        example: |
+          {
+            "oldPassword": "oldpass",
+            "newPassword": "newpass"
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "id": "54d8ae163fd30364605c81a4",
+                "firstname": "Romain",
+                "lastname": "Terieur"
+              }
+
+/{userId}/email:
+  put:
+    is: [auth: {roles: 'user'} ]
+    description: Update my email.
+    body:
+      application/json:
+        example: |
+          {
+            "email": "new@email.com"
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "id": "54d8ae163fd30364605c81a4",
+                "firstname": "Romain",
+                "lastname": "Terieur"
+              }
+
+/{userId}/prefFavorite:
+  put:
+    is: [auth: {roles: 'user'} ]
+    description: Update my favorite business.
+    body:
+      application/json:
+        example: |
+          {
+            "favorite" : "55894f7134f23c9410420f73"
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "message" : "Votre salon favoris ont été mit à jours avec succès."
+              }
