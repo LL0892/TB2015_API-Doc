@@ -1,0 +1,123 @@
+description: Ressource Business
+
+get:
+  description: Obtenir une liste de salons.
+post:
+  is: [auth: {roles: 'manager'} ]
+  description: Créer un salon
+
+/{businessId}:
+  get:
+    description: Obtenir un salon spécifique.
+  put:
+    is: [auth: {roles: 'staff'} ]
+    description: Modifier un salon.
+
+/{businessId}/pageId:
+  put:
+    is: [auth: {roles: 'staff'} ]
+    description: Ajouter la référence FB de page au salon.
+
+/searchByPageId:
+  get:
+    description: Trouver un salon basé sur sa référence de page FB.
+
+# Routes "Horaires"
+/{businessId}/schedules:
+  get:
+    is: [auth: {roles: 'staff'} ]
+    description: Obtenir une liste de tranches horaires pour ce salon.
+  post:
+    is: [auth: {roles: 'staff'} ]
+    description: Créer une nouvelle tranche horaire pour ce salon.
+
+/{businessId}/schedules/{scheduleId}:
+  get:
+    is: [auth: {roles: 'staff'} ]
+    description: Obtenir une tranche horaire spécifique pour ce salon.
+  put:
+    is: [auth: {roles: 'staff'} ]
+    description: Modifier une tranche horaire de ce salon.
+  delete:
+    is: [auth: {roles: 'staff'} ]
+    description: Supprimer une tranche horaire de ce salon.
+
+# Routes "Staffs"
+/{businessId}/staffs:
+  get:
+    description: Obtenir une liste de personnel pour ce salon.
+
+/{businessId}/staffs/{staffId}:
+  get:
+    is: [auth: {roles: 'staff'} ]
+    description: Obtenir un membre du personnel spécifique à un salon.
+
+# Routes "Prestations"
+/{businessId}/prestations:
+  get:
+    description: Obtenir la liste de prestation de ce salon.
+  post:
+    is: [auth: {roles: 'staff'} ]
+    description: Créer une nouvelle prestation pour ce salon.
+
+/{businessId}/prestations/{prestationId}:
+  get:
+    is: [auth: {roles: 'staff'} ]
+    description: Obtenir une prestation spécifique à ce salon.
+  put:
+    is: [auth: {roles: 'staff'} ]
+    description: Modifier une prestation de ce salon.
+  delete:
+    is: [auth: {roles: 'staff'} ]
+    description: Supprimer une prestation de ce salon.
+
+# Routes "Prix"
+/{businessId}/prestations/{prestationId}/prices:
+  post:
+    is: [auth: {roles: 'staff'} ]
+    description: Ajouter une catégorie de prix à cette prestation de ce salon.
+
+/{businessId}/prestations/{prestationId}/prices/{priceId}:
+  get:
+    is: [auth: {roles: 'staff'} ]
+    description: Obtenir une categorie de prix spécifique à cette prestation de ce salon.
+  put:
+    is: [auth: {roles: 'staff'} ]
+    description: Modifier une catégorie de prix à cette prestation de ce salon.
+  delete:
+    is: [auth: {roles: 'staff'} ]
+    description: Supprimer une catégorie de prix à cette prestation de ce salon.
+
+# Routes "Rendezvous"
+/{businessId}/rendezvous:
+  get:
+    is: [auth: {roles: 'staff'} ]
+    description: Obtenir une liste de rendez-vous de ce salon.
+  post:
+    is: [auth: {roles: 'staff'} ]
+    description: Ajouter un rendez-vous en tant que staff de ce salon.
+
+/{businessId}/rendezvous/{rdvId}:
+  get:
+    is: [auth: {roles: 'staff'} ]
+    description: Obtenir un rendez-vous spécifique de ce salon.
+
+/{businessId}/rendezvous/search:
+  post:
+    description: Obtenir une liste de rendez-vous pour ce salon selon les critère de recherche.
+
+# Routes "Notifications"
+/{businessId}/notifications:
+  get:
+    is: [auth: {roles: 'staff'} ]
+    description: Obtenir une liste de rendez-vous de ce salon.
+
+  post:
+    is: [auth: {roles: 'staff'} ]
+    description: Créer une notification pour ce salon.
+
+
+/{businessId}/notifications/{notifId}:
+  delete:
+    is: [auth: {roles: 'staff'} ]
+    description: Supprimer une notification de ce salon.

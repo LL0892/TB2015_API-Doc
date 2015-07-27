@@ -1,7 +1,7 @@
 description: User resource.
 get:
   is: [auth: { roles: 'staff' }]
-  description: Retrieve the list of the users.
+  description: Obtenir une liste d'utilisateur.
   responses:
     200:
       body:
@@ -48,21 +48,21 @@ get:
               },
             ]
 post:
-  description: Create a new user profile.
+  description: Créer un nouvel utilisateur.
   body:
     application/json:
       example: |
         {
           "password": "mdp"
-          "firstname": "Romain",
-          "lastname": "Terieur",
-          "email": "mail@mail.com",
-          "dateOfBirth": "",
+          "firstname": "Admin",
+          "lastname": "Admin",
+          "email": "admin@admin.com",
+          "dateOfBirth": "1992-11-06T00:00:00.000Z",
           "gender": "homme",
           "phone": "+41 79 123 45 67",
           "mobile": "+41 79 123 45 67",
           "city": "Neuchâtel",
-          "street": "une rue",
+          "street": "Avenue du Premier Mars 1",
           "canton": "NE",
           "zip": "2000",
           "imageProfileURL": "userPlaceholder.png"
@@ -73,43 +73,26 @@ post:
         application/json:
           example: |
             {
-              "id": "54d8ae163fd30364605c81a4",
-              "firstname": "Romain",
-              "lastname": "Terieur",
-              "email": "mail@mail.com",
-              "dateOfBirth": "",
-              "gender": "homme",
-              "roles": [
-                "user"
-              ],
-              "staffId": "54d8ae163fd30364605c81a5",
-              "businessId": "54d8ae163fd30364605b45b5",
-              "phone": "+41 79 123 45 67",
-              "mobile": "+41 79 123 45 67",
-              "city": "Neuchâtel",
-              "street": "une rue",
-              "canton": "NE",
-              "zip": "2000",
-              "imageProfileURL": "userPlaceholder.png"
+              "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NThkNGRmZGE5MWU5OTdjMTZjM2M0NGUiLCJpYXQiOjE0MzUzMjM5MDEyODMsImV4cCI6MTQzNTM3NzkwMTI4M30.ldu497Os0Q2dzbF6pDHvTcFlgGdVrnK-pknAWaJ3_Mo"
             }
 
 /manager:
   post:
-    description: Create a new user with manager role.
+    description: Créer un nouvel utilisateur avec le rôle de manager.
     body:
       application/json:
         example: |
           {
             "password": "mdp"
-            "firstname": "Romain",
-            "lastname": "Terieur",
-            "email": "mail@mail.com",
-            "dateOfBirth": "",
+            "firstname": "Admin",
+            "lastname": "Admin",
+            "email": "admin@admin.com",
+            "dateOfBirth": "1992-11-06T00:00:00.000Z",
             "gender": "homme",
             "phone": "+41 79 123 45 67",
             "mobile": "+41 79 123 45 67",
             "city": "Neuchâtel",
-            "street": "une rue",
+            "street": "Avenue du Premier Mars 1",
             "canton": "NE",
             "zip": "2000",
             "imageProfileURL": "userPlaceholder.png"
@@ -120,68 +103,55 @@ post:
           application/json:
             example: |
               {
-                "id": "54d8ae163fd30364605c81a4",
-                "firstname": "Romain",
-                "lastname": "Terieur",
-                "email": "mail@mail.com",
-                "dateOfBirth": "",
-                "gender": "homme",
-                "roles": [
-                  "user", "staff"
-                ],
-                "staffId": "54d8ae163fd30364605c81a5",
-                "businessId": "54d8ae163fd30364605b45b5",
-                "phone": "+41 79 123 45 67",
-                "mobile": "+41 79 123 45 67",
-                "city": "Neuchâtel",
-                "street": "une rue",
-                "canton": "NE",
-                "zip": "2000",
-                "imageProfileURL": "userPlaceholder.png"
+                "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NThkNGRmZGE5MWU5OTdjMTZjM2M0NGUiLCJpYXQiOjE0MzUzMjM5MDEyODMsImV4cCI6MTQzNTM3NzkwMTI4M30.ldu497Os0Q2dzbF6pDHvTcFlgGdVrnK-pknAWaJ3_Mo"
               }
 
 /me:
   get:
     is: [auth: { roles: 'user' }]
-    description: Get my user profile
+    description: Obtenir mon profil d'utilisateur.
     responses:
       200:
         body:
           application/json:
             example: |
               {
-                "id": "54d8ae163fd30364605c81a4",
-                "firstname": "Romain",
-                "lastname": "Terieur",
-                "email": "mail@mail.com",
-                "dateOfBirth": "",
+                "_id": "558d4dfda91e997c16c3c44e",
+                "name": "Admin Admin",
+                "email": "admin@admin.com",
+                "age": 22,
                 "gender": "homme",
-                "roles": [
-                  "user", "staff"
-                ],
-                "staffId": "54d8ae163fd30364605c81a5",
-                "businessId": "54d8ae163fd30364605b45b5",
-                "phone": "+41 79 123 45 67",
-                "mobile": "+41 79 123 45 67",
+                "phone": "+41 000 00 00",
+                "mobile": "+41 000 00 01",
                 "city": "Neuchâtel",
-                "street": "une rue",
+                "street": "Avenue du Premier Mars 1",
                 "canton": "NE",
-                "zip": "2000",
-                "imageProfileURL": "userPlaceholder.png"
+                "zip": 2000,
+                "imageProfileUrl": "userPlaceholder.png",
+                "roles": [
+                  "user",
+                  "staff",
+                  "manager"
+                ],
+                "staffId": "558d5010a91e997c16c3c457",
+                "preferences": {
+                  "homeDisplay": "list"
+                }
               }
   put:
     is: [auth: {roles: 'user'} ]
-    description: Update the details of my user profile.
+    description: Mettre à jour mon profil d'utilisateur.
     body:
       application/json:
         example: |
           {
-            "firstname": "Romain",
-            "lastname": "Terieur",
-            "phone": "+6624582",
-            "roles": [
-              "citizen"
-            ]
+            "phone": "+41 000 00 00"
+            "mobile": "+41 000 00 00"
+            "imageProfileURL": "image.png"
+            "zip": "2000"
+            "city": "Neuchâtel"
+            "canton": "NE"
+            "street": "Avenue du Premier Mars 1"
           }
     responses:
       200:
@@ -189,37 +159,38 @@ post:
           application/json:
             example: |
               {
-                "id": "54d8ae163fd30364605c81a4",
-                "firstname": "Romain",
-                "lastname": "Terieur",
-                "phone": "+6624582",
-                "roles": [
-                  "citizen"
-                ]
+                "message": "Profil utilisateur modifié avec succès."
               }
 
 /{userId}:
   get:
     is: [auth: {roles: 'any'} ]
-    description: Retrieve the details of a specific user.
+    description: Retrouver les détails d'un utilisateur spécifique.
     responses:
       200:
         body:
           application/json:
             example: |
               {
-                "id": "54d8ae163fd30364605c81a4",
-                "firstname": "Romain",
-                "lastname": "Terieur",
-                "phone": "+6624582",
-                "roles": [
-                  "citizen"
-                ]
+                "utilisateur": {
+                  "_id": "558d4dfda91e997c16c3c44e",
+                  "name": "Admin Admin",
+                  "email": "admin@admin.com",
+                  "age": 22,
+                  "gender": "homme",
+                  "phone": "+41 000 00 00",
+                  "mobile": "+41 000 00 00",
+                  "city": "Neuchâtel",
+                  "street": "Avenue du Premier Mars 1",
+                  "canton": "NE",
+                  "zip": 2000,
+                  "imageProfileUrl": "userPlaceholder.png"
+                }
               }
 
   delete:
     is: [auth: {roles: 'admin'} ]
-    description: Delete a specific user.
+    description: Supprimer un utilisateur spécifique.
     responses:
       204:
         body:
@@ -227,7 +198,7 @@ post:
 /{userId}/password:
   put:
     is: [auth: {roles: 'user'} ]
-    description: Update my password.
+    description: Modifier mon mot de passe.
     body:
       application/json:
         example: |
@@ -241,15 +212,13 @@ post:
           application/json:
             example: |
               {
-                "id": "54d8ae163fd30364605c81a4",
-                "firstname": "Romain",
-                "lastname": "Terieur"
+                "message": "Votre mot de passe a été changé avec succès."
               }
 
 /{userId}/email:
   put:
     is: [auth: {roles: 'user'} ]
-    description: Update my email.
+    description: Modifier mon adresse email.
     body:
       application/json:
         example: |
@@ -262,15 +231,13 @@ post:
           application/json:
             example: |
               {
-                "id": "54d8ae163fd30364605c81a4",
-                "firstname": "Romain",
-                "lastname": "Terieur"
+                "message": "Votre email a été changé avec succès."
               }
 
 /{userId}/prefFavorite:
   put:
     is: [auth: {roles: 'user'} ]
-    description: Update my favorite business.
+    description: Mettre à jour mon salon favori.
     body:
       application/json:
         example: |

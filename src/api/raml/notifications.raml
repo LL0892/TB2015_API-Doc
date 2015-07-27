@@ -1,0 +1,24 @@
+description: Ressource Notification
+
+get:
+  is: [auth: {roles: 'user'} ]
+  description: Obtenir une liste de notifications.
+
+/{id}:
+  get:
+    is: [auth: {roles: 'user'} ]
+    description: Obtenir une notification spécifique.
+  delete:
+    is: [auth: {roles: 'user'} ]
+    description: Supprimer une notification.
+
+
+/{id}/accepted:
+  put:
+    is: [auth: {roles: 'user'} ]
+    description: Accepter une notification.
+
+/{id}/refused:
+  put:
+    is: [auth: {roles: 'user'} ]
+    description: Refuser une notification.

@@ -1,8 +1,73 @@
-/staffs:
-  description: Staff resource.
-  /populate:
-    post:
-      description: Allow to populate random data to have a starting situation.
-      responses:
-        200:
-          body:
+description: Ressource Staff
+post:
+  description: Créer un nouveau profil de staff.
+  body:
+    application/json:
+      example: |
+        {
+          "name": "Staff profile name",
+          "phone": "+41 79 123 45 67",
+          "mobile": "+41 79 123 45 67",
+          "email": "Neuchâtel",
+          "photoStaffURL": "businessPlaceholder.png",
+          "businessId": "558d4eeea91e997c16c3c44f"
+        }
+  responses:
+    201:
+      description: Profil staff créé avec succès.
+      body:
+        application/json:
+          example: |
+            {
+              "message": "Votre profil staff a été crée avec succès."
+            }
+    403:
+      description: Profil staff déjà créé.
+      body:
+        application/json:
+          example: |
+            {
+              "message": "Vous avez déjà crée un profil staff."
+            }
+
+/me:
+  get:
+    is: [auth: {roles: 'staff'} ]
+    description: Avoir son profil de staff.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                
+              }
+  put:
+    is: [auth: {roles: 'staff'} ]
+    description: Modifier son profil de staff.
+    body:
+      application/json:
+        example: |
+          {
+            "name": "Staff profile name",
+            "phone": "+41 79 123 45 67",
+            "mobile": "+41 79 123 45 67",
+            "email": "Neuchâtel",
+            "photoStaffURL": "businessPlaceholder.png"
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {}
+
+/{staffId}:
+  get:
+    description: Obtenir un profil de staff spécifique.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {}

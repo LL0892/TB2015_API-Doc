@@ -25,7 +25,7 @@ Ci-dessous un bref résumé de comment les verbes HTTP sont utilisés dans l'API
 |----------|--------
 | `GET`    | Utilisé pour retrouver une ressource ou une collection de ressources.
 | `POST`   | Utilisé pour créer une nouvelle ressource ou faire une opération de recherche avec paramètres.
-| `PUT`    | Utilisé pour faire une mise à jours complête de la ressource (remplacere la ressource par les données JSON provenant de la requête).
+| `PUT`    | Utilisé pour faire une mise à jours complête de la ressource (remplacera la ressource par les données JSON provenant de la requête).
 | `DELETE` | Utilisé pour supprimer des ressources.
 
 `HEAD` et `PATCH` ne sont actuellement pas utilisés.
@@ -40,7 +40,6 @@ Pour intéragir avec l'API, votre client devra être authentifié pour certaines
 
 | Role      | Description |
 |-----------|--------
-| `none`     | Pas de rôle requis (en général l'authentification pour l'accès à cette ressource n'est pas requis)
 | `user` 	| Tout utilisateur avec le rôle user.
 | `staff`   | Tuot utilisateur avec le rôle staff.
 | `manager` | Tuot utilisateur avec le rôle manager.
