@@ -2,122 +2,1734 @@ description: Ressource Business
 
 get:
   description: Obtenir une liste de salons.
+  responses:
+    200:
+      body:
+        application/json:
+          example: |
+            [
+              {
+                  "_id": "55b78a03985aae980b1ab8e1",
+                  "founder": "55b78840888c2664199ad8d2",
+                  "name": "test",
+                  "city": "Buttes",
+                  "zip": 2115,
+                  "street": "Avenue des sports",
+                  "canton": "NE",
+                  "schedules": [ 
+                      {
+                          "dayName": "lundi",
+                          "dayId": 0,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du lundi",
+                          "_id": "55b78a03985aae980b1ab8e2",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.696+02:00",
+                          "createdOn": "2015-07-28T15:56:19.696+02:00"
+                      }, 
+                      {
+                          "dayName": "mardi",
+                          "dayId": 1,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du mardi",
+                          "_id": "55b78a03985aae980b1ab8e3",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "mercredi",
+                          "dayId": 2,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du mercredi",
+                          "_id": "55b78a03985aae980b1ab8e4",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "jeudi",
+                          "dayId": 3,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du jeudi",
+                          "_id": "55b78a03985aae980b1ab8e5",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "vendredi",
+                          "dayId": 4,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du vendredi",
+                          "_id": "55b78a03985aae980b1ab8e6",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "samedi",
+                          "dayId": 5,
+                          "description": "Fermé le samedi",
+                          "_id": "55b78a03985aae980b1ab8e7",
+                          "workingDay": false,
+                          "updatedOn": "2015-07-28T15:56:19.698+02:00",
+                          "createdOn": "2015-07-28T15:56:19.698+02:00"
+                      }, 
+                      {
+                          "dayName": "dimanche",
+                          "dayId": 6,
+                          "description": "Fermé le dimanche",
+                          "_id": "55b78a03985aae980b1ab8e8",
+                          "workingDay": false,
+                          "updatedOn": "2015-07-28T15:56:19.698+02:00",
+                          "createdOn": "2015-07-28T15:56:19.698+02:00"
+                      }
+                  ],
+                  "staffs": [ 
+                      {
+                          "staffName": "Loic",
+                          "staffId": "55b78e8a985aae980b1ab8ef",
+                          "_id": "55b78e8a985aae980b1ab8f0"
+                      }
+                  ],
+                  "businessContact": {
+                      "siteURL": "http://monsalon.ch",
+                      "phone": "+41.3928812",
+                      "mobile": "+41.3928812",
+                      "email": "staff@staff.com"
+                  },
+                  "updatedOn": "2015-07-28T16:15:38.765+02:00",
+                  "createdOn": "2015-07-28T15:56:19.694+02:00",
+                  "__v": 4,
+                  "fbPageId": "884960418225117"
+              },
+              {
+                  "_id": "55b78a03985aae980b1ab8e1",
+                  "founder": "55b78840888c2664199ad8d2",
+                  "name": "test",
+                  "city": "Buttes",
+                  "zip": 2115,
+                  "street": "Avenue des sports",
+                  "canton": "NE",
+                  "schedules": [ 
+                      {
+                          "dayName": "lundi",
+                          "dayId": 0,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du lundi",
+                          "_id": "55b78a03985aae980b1ab8e2",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.696+02:00",
+                          "createdOn": "2015-07-28T15:56:19.696+02:00"
+                      }, 
+                      {
+                          "dayName": "mardi",
+                          "dayId": 1,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du mardi",
+                          "_id": "55b78a03985aae980b1ab8e3",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "mercredi",
+                          "dayId": 2,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du mercredi",
+                          "_id": "55b78a03985aae980b1ab8e4",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "jeudi",
+                          "dayId": 3,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du jeudi",
+                          "_id": "55b78a03985aae980b1ab8e5",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "vendredi",
+                          "dayId": 4,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du vendredi",
+                          "_id": "55b78a03985aae980b1ab8e6",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "samedi",
+                          "dayId": 5,
+                          "description": "Fermé le samedi",
+                          "_id": "55b78a03985aae980b1ab8e7",
+                          "workingDay": false,
+                          "updatedOn": "2015-07-28T15:56:19.698+02:00",
+                          "createdOn": "2015-07-28T15:56:19.698+02:00"
+                      }, 
+                      {
+                          "dayName": "dimanche",
+                          "dayId": 6,
+                          "description": "Fermé le dimanche",
+                          "_id": "55b78a03985aae980b1ab8e8",
+                          "workingDay": false,
+                          "updatedOn": "2015-07-28T15:56:19.698+02:00",
+                          "createdOn": "2015-07-28T15:56:19.698+02:00"
+                      }
+                  ],
+                  "staffs": [ 
+                      {
+                          "staffName": "Loic",
+                          "staffId": "55b78e8a985aae980b1ab8ef",
+                          "_id": "55b78e8a985aae980b1ab8f0"
+                      }
+                  ],
+                  "businessContact": {
+                      "siteURL": "http://monsalon.ch",
+                      "phone": "+41.3928812",
+                      "mobile": "+41.3928812",
+                      "email": "staff@staff.com"
+                  },
+                  "updatedOn": "2015-07-28T16:15:38.765+02:00",
+                  "createdOn": "2015-07-28T15:56:19.694+02:00",
+                  "__v": 4,
+                  "fbPageId": "884960418225117"
+              }
+            ]
+  
 post:
   is: [auth: {roles: 'manager'} ]
   description: Créer un salon
+  body:
+    application/json:
+      example: |
+        {
+          "name": "Le salon de l'admin",
+          "phone": "+41 000 00 00",
+          "mobile": "+41 000 00 01",
+          "zip": 2000,
+          "city": "Neuchâtel",
+          "canton": "NE",
+          "street": "Avenue du Premier Mars 1",
+          "site": "www.salon-admin.com",
+          "facebookURL": "www.facebook.com/salon-admin",
+          "siteURL": "www.salon-admin.ch",
+          "imageBusinessURL": "salonAdmin.png",
+          "email": "salon-admin@mail.com"
+        }
+  responses:
+    201:
+      body:
+        application/json:
+          example: |
+            {
+              "message": "Votre salon a été créé avec succès."
+            }
+    403:
+      body:
+        application/json:
+          example: |
+            {
+              "message": "Vous avez déjà crée un salon."
+            }
 
 /{businessId}:
   get:
     description: Obtenir un salon spécifique.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                  "_id": "55b78a03985aae980b1ab8e1",
+                  "founder": "55b78840888c2664199ad8d2",
+                  "name": "test",
+                  "city": "Buttes",
+                  "zip": 2115,
+                  "street": "Avenue des sports",
+                  "canton": "NE",
+                  "schedules": [ 
+                      {
+                          "dayName": "lundi",
+                          "dayId": 0,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du lundi",
+                          "_id": "55b78a03985aae980b1ab8e2",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.696+02:00",
+                          "createdOn": "2015-07-28T15:56:19.696+02:00"
+                      }, 
+                      {
+                          "dayName": "mardi",
+                          "dayId": 1,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du mardi",
+                          "_id": "55b78a03985aae980b1ab8e3",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "mercredi",
+                          "dayId": 2,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du mercredi",
+                          "_id": "55b78a03985aae980b1ab8e4",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "jeudi",
+                          "dayId": 3,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du jeudi",
+                          "_id": "55b78a03985aae980b1ab8e5",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "vendredi",
+                          "dayId": 4,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du vendredi",
+                          "_id": "55b78a03985aae980b1ab8e6",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "samedi",
+                          "dayId": 5,
+                          "description": "Fermé le samedi",
+                          "_id": "55b78a03985aae980b1ab8e7",
+                          "workingDay": false,
+                          "updatedOn": "2015-07-28T15:56:19.698+02:00",
+                          "createdOn": "2015-07-28T15:56:19.698+02:00"
+                      }, 
+                      {
+                          "dayName": "dimanche",
+                          "dayId": 6,
+                          "description": "Fermé le dimanche",
+                          "_id": "55b78a03985aae980b1ab8e8",
+                          "workingDay": false,
+                          "updatedOn": "2015-07-28T15:56:19.698+02:00",
+                          "createdOn": "2015-07-28T15:56:19.698+02:00"
+                      }
+                  ],
+                  "staffs": [ 
+                      {
+                          "staffName": "Loic",
+                          "staffId": "55b78e8a985aae980b1ab8ef",
+                          "_id": "55b78e8a985aae980b1ab8f0"
+                      }
+                  ],
+                  "businessContact": {
+                      "siteURL": "http://monsalon.ch",
+                      "phone": "+41.3928812",
+                      "mobile": "+41.3928812",
+                      "email": "staff@staff.com"
+                  },
+                  "updatedOn": "2015-07-28T16:15:38.765+02:00",
+                  "createdOn": "2015-07-28T15:56:19.694+02:00",
+                  "__v": 4,
+                  "fbPageId": "884960418225117"
+              }
   put:
     is: [auth: {roles: 'staff'} ]
     description: Modifier un salon.
+    body:
+      application/json:
+        example: |
+          {
+            "name": "Le salon de l'admin",
+            "phone": "+41 000 00 00",
+            "mobile": "+41 000 00 01",
+            "zip": 2000,
+            "city": "Neuchâtel",
+            "canton": "NE",
+            "street": "Avenue du Premier Mars 1",
+            "site": "www.salon-admin.com",
+            "facebookURL": "www.facebook.com/salon-admin",
+            "siteURL": "www.salon-admin.ch",
+            "imageBusinessURL": "salonAdmin.png",
+            "email": "salon-admin@mail.com"
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "message": "Votre salon a été modifié avec succès.",
+                "business": 
+                {
+                  "_id": "55b78a03985aae980b1ab8e1",
+                  "founder": "55b78840888c2664199ad8d2",
+                  "name": "Le salon de l'admin",
+                  "city": "Neuchâtel",
+                  "zip": 2000,
+                  "street": "Avenue du Premier Mars 1",
+                  "canton": "NE",
+                  "schedules": [ 
+                      {
+                          "dayName": "lundi",
+                          "dayId": 0,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du lundi",
+                          "_id": "55b78a03985aae980b1ab8e2",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.696+02:00",
+                          "createdOn": "2015-07-28T15:56:19.696+02:00"
+                      }, 
+                      {
+                          "dayName": "mardi",
+                          "dayId": 1,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du mardi",
+                          "_id": "55b78a03985aae980b1ab8e3",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "mercredi",
+                          "dayId": 2,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du mercredi",
+                          "_id": "55b78a03985aae980b1ab8e4",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "jeudi",
+                          "dayId": 3,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du jeudi",
+                          "_id": "55b78a03985aae980b1ab8e5",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "vendredi",
+                          "dayId": 4,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du vendredi",
+                          "_id": "55b78a03985aae980b1ab8e6",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "samedi",
+                          "dayId": 5,
+                          "description": "Fermé le samedi",
+                          "_id": "55b78a03985aae980b1ab8e7",
+                          "workingDay": false,
+                          "updatedOn": "2015-07-28T15:56:19.698+02:00",
+                          "createdOn": "2015-07-28T15:56:19.698+02:00"
+                      }, 
+                      {
+                          "dayName": "dimanche",
+                          "dayId": 6,
+                          "description": "Fermé le dimanche",
+                          "_id": "55b78a03985aae980b1ab8e8",
+                          "workingDay": false,
+                          "updatedOn": "2015-07-28T15:56:19.698+02:00",
+                          "createdOn": "2015-07-28T15:56:19.698+02:00"
+                      }
+                  ],
+                  "staffs": [ 
+                      {
+                          "staffName": "Loic",
+                          "staffId": "55b78e8a985aae980b1ab8ef",
+                          "_id": "55b78e8a985aae980b1ab8f0"
+                      }
+                  ],
+                  "businessContact": {
+                      "facebookURL": "www.facebook.com/salon-admin",
+                      "siteURL": "http://salon-admin.ch",
+                      "phone": "+41 000 00 00",
+                      "mobile": "+41 000 00 01",
+                      "email": "salon-admin@mail.com"
+                  },
+                  "updatedOn": "2015-07-28T16:15:38.765+02:00",
+                  "createdOn": "2015-07-28T15:56:19.694+02:00",
+                  "__v": 4,
+                  "fbPageId": "884960418225117"
+                }
+              }
 
 /{businessId}/pageId:
   put:
     is: [auth: {roles: 'staff'} ]
     description: Ajouter la référence FB de page au salon.
+    body:
+      application/json:
+        example: |
+          {
+            "fbPageId": "884960418225117"
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "message": "Votre page Facebook a été réferencée avec succès.",
+                "business": 
+                {
+                  "_id": "55b78a03985aae980b1ab8e1",
+                  "founder": "55b78840888c2664199ad8d2",
+                  "name": "Le salon de l'admin",
+                  "city": "Neuchâtel",
+                  "zip": 2000,
+                  "street": "Avenue du Premier Mars 1",
+                  "canton": "NE",
+                  "schedules": [ 
+                      {
+                          "dayName": "lundi",
+                          "dayId": 0,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du lundi",
+                          "_id": "55b78a03985aae980b1ab8e2",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.696+02:00",
+                          "createdOn": "2015-07-28T15:56:19.696+02:00"
+                      }, 
+                      {
+                          "dayName": "mardi",
+                          "dayId": 1,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du mardi",
+                          "_id": "55b78a03985aae980b1ab8e3",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "mercredi",
+                          "dayId": 2,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du mercredi",
+                          "_id": "55b78a03985aae980b1ab8e4",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "jeudi",
+                          "dayId": 3,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du jeudi",
+                          "_id": "55b78a03985aae980b1ab8e5",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "vendredi",
+                          "dayId": 4,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du vendredi",
+                          "_id": "55b78a03985aae980b1ab8e6",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "samedi",
+                          "dayId": 5,
+                          "description": "Fermé le samedi",
+                          "_id": "55b78a03985aae980b1ab8e7",
+                          "workingDay": false,
+                          "updatedOn": "2015-07-28T15:56:19.698+02:00",
+                          "createdOn": "2015-07-28T15:56:19.698+02:00"
+                      }, 
+                      {
+                          "dayName": "dimanche",
+                          "dayId": 6,
+                          "description": "Fermé le dimanche",
+                          "_id": "55b78a03985aae980b1ab8e8",
+                          "workingDay": false,
+                          "updatedOn": "2015-07-28T15:56:19.698+02:00",
+                          "createdOn": "2015-07-28T15:56:19.698+02:00"
+                      }
+                  ],
+                  "staffs": [ 
+                      {
+                          "staffName": "Loic",
+                          "staffId": "55b78e8a985aae980b1ab8ef",
+                          "_id": "55b78e8a985aae980b1ab8f0"
+                      }
+                  ],
+                  "businessContact": {
+                      "facebookURL": "www.facebook.com/salon-admin",
+                      "siteURL": "http://salon-admin.ch",
+                      "phone": "+41 000 00 00",
+                      "mobile": "+41 000 00 01",
+                      "email": "salon-admin@mail.com"
+                  },
+                  "updatedOn": "2015-07-28T16:15:38.765+02:00",
+                  "createdOn": "2015-07-28T15:56:19.694+02:00",
+                  "__v": 4,
+                  "fbPageId": "884960418225117"
+                }
+              }
 
 /searchByPageId:
-  get:
+  post:
     description: Trouver un salon basé sur sa référence de page FB.
+    body:
+      application/json:
+        example: |
+          {
+            "fbPageId": "884960418225117"
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "business": 
+                {
+                  "_id": "55b78a03985aae980b1ab8e1",
+                  "founder": "55b78840888c2664199ad8d2",
+                  "name": "Le salon de l'admin",
+                  "city": "Neuchâtel",
+                  "zip": 2000,
+                  "street": "Avenue du Premier Mars 1",
+                  "canton": "NE",
+                  "schedules": [ 
+                      {
+                          "dayName": "lundi",
+                          "dayId": 0,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du lundi",
+                          "_id": "55b78a03985aae980b1ab8e2",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.696+02:00",
+                          "createdOn": "2015-07-28T15:56:19.696+02:00"
+                      }, 
+                      {
+                          "dayName": "mardi",
+                          "dayId": 1,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du mardi",
+                          "_id": "55b78a03985aae980b1ab8e3",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "mercredi",
+                          "dayId": 2,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du mercredi",
+                          "_id": "55b78a03985aae980b1ab8e4",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "jeudi",
+                          "dayId": 3,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du jeudi",
+                          "_id": "55b78a03985aae980b1ab8e5",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "vendredi",
+                          "dayId": 4,
+                          "startHour": "08:00",
+                          "endHour": "17:00",
+                          "description": "Horaire du vendredi",
+                          "_id": "55b78a03985aae980b1ab8e6",
+                          "workingDay": true,
+                          "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                          "createdOn": "2015-07-28T15:56:19.697+02:00"
+                      }, 
+                      {
+                          "dayName": "samedi",
+                          "dayId": 5,
+                          "description": "Fermé le samedi",
+                          "_id": "55b78a03985aae980b1ab8e7",
+                          "workingDay": false,
+                          "updatedOn": "2015-07-28T15:56:19.698+02:00",
+                          "createdOn": "2015-07-28T15:56:19.698+02:00"
+                      }, 
+                      {
+                          "dayName": "dimanche",
+                          "dayId": 6,
+                          "description": "Fermé le dimanche",
+                          "_id": "55b78a03985aae980b1ab8e8",
+                          "workingDay": false,
+                          "updatedOn": "2015-07-28T15:56:19.698+02:00",
+                          "createdOn": "2015-07-28T15:56:19.698+02:00"
+                      }
+                  ],
+                  "staffs": [ 
+                      {
+                          "staffName": "Loic",
+                          "staffId": "55b78e8a985aae980b1ab8ef",
+                          "_id": "55b78e8a985aae980b1ab8f0"
+                      }
+                  ],
+                  "businessContact": {
+                      "facebookURL": "www.facebook.com/salon-admin",
+                      "siteURL": "http://salon-admin.ch",
+                      "phone": "+41 000 00 00",
+                      "mobile": "+41 000 00 01",
+                      "email": "salon-admin@mail.com"
+                  },
+                  "updatedOn": "2015-07-28T16:15:38.765+02:00",
+                  "createdOn": "2015-07-28T15:56:19.694+02:00",
+                  "__v": 4,
+                  "fbPageId": "884960418225117"
+                }
+              }
+
 
 # Routes "Horaires"
 /{businessId}/schedules:
   get:
     is: [auth: {roles: 'staff'} ]
     description: Obtenir une liste de tranches horaires pour ce salon.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "horaires": [ 
+                    {
+                        "dayName": "lundi",
+                        "dayId": 0,
+                        "startHour": "08:00",
+                        "endHour": "17:00",
+                        "description": "Horaire du lundi",
+                        "_id": "55b78a03985aae980b1ab8e2",
+                        "workingDay": true,
+                        "updatedOn": "2015-07-28T15:56:19.696+02:00",
+                        "createdOn": "2015-07-28T15:56:19.696+02:00"
+                    }, 
+                    {
+                        "dayName": "mardi",
+                        "dayId": 1,
+                        "startHour": "08:00",
+                        "endHour": "17:00",
+                        "description": "Horaire du mardi",
+                        "_id": "55b78a03985aae980b1ab8e3",
+                        "workingDay": true,
+                        "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                        "createdOn": "2015-07-28T15:56:19.697+02:00"
+                    }, 
+                    {
+                        "dayName": "mercredi",
+                        "dayId": 2,
+                        "startHour": "08:00",
+                        "endHour": "17:00",
+                        "description": "Horaire du mercredi",
+                        "_id": "55b78a03985aae980b1ab8e4",
+                        "workingDay": true,
+                        "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                        "createdOn": "2015-07-28T15:56:19.697+02:00"
+                    }, 
+                    {
+                        "dayName": "jeudi",
+                        "dayId": 3,
+                        "startHour": "08:00",
+                        "endHour": "17:00",
+                        "description": "Horaire du jeudi",
+                        "_id": "55b78a03985aae980b1ab8e5",
+                        "workingDay": true,
+                        "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                        "createdOn": "2015-07-28T15:56:19.697+02:00"
+                    }, 
+                    {
+                        "dayName": "vendredi",
+                        "dayId": 4,
+                        "startHour": "08:00",
+                        "endHour": "17:00",
+                        "description": "Horaire du vendredi",
+                        "_id": "55b78a03985aae980b1ab8e6",
+                        "workingDay": true,
+                        "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                        "createdOn": "2015-07-28T15:56:19.697+02:00"
+                    }, 
+                    {
+                        "dayName": "samedi",
+                        "dayId": 5,
+                        "description": "Fermé le samedi",
+                        "_id": "55b78a03985aae980b1ab8e7",
+                        "workingDay": false,
+                        "updatedOn": "2015-07-28T15:56:19.698+02:00",
+                        "createdOn": "2015-07-28T15:56:19.698+02:00"
+                    }, 
+                    {
+                        "dayName": "dimanche",
+                        "dayId": 6,
+                        "description": "Fermé le dimanche",
+                        "_id": "55b78a03985aae980b1ab8e8",
+                        "workingDay": false,
+                        "updatedOn": "2015-07-28T15:56:19.698+02:00",
+                        "createdOn": "2015-07-28T15:56:19.698+02:00"
+                    }
+                ]
+              }
   post:
     is: [auth: {roles: 'staff'} ]
     description: Créer une nouvelle tranche horaire pour ce salon.
+    body:
+      application/json:
+        example: |
+          {
+            "dayName": "lundi",
+            "startHour": "08:00",
+            "endHour": "17:00",
+            "description": "Horaire du lundi",
+            "workingDay": true
+          }
+    responses:
+      201:
+        body:
+          application/json:
+            example: |
+              {
+                "message": "L'horaire a été ajouté avec succès.",
+                "horaires": [ 
+                    {
+                        "dayName": "lundi",
+                        "dayId": 0,
+                        "startHour": "08:00",
+                        "endHour": "17:00",
+                        "description": "Horaire du lundi",
+                        "_id": "55b78a03985aae980b1ab8e2",
+                        "workingDay": true,
+                        "updatedOn": "2015-07-28T15:56:19.696+02:00",
+                        "createdOn": "2015-07-28T15:56:19.696+02:00"
+                    }, 
+                    {
+                        "dayName": "mardi",
+                        "dayId": 1,
+                        "startHour": "08:00",
+                        "endHour": "17:00",
+                        "description": "Horaire du mardi",
+                        "_id": "55b78a03985aae980b1ab8e3",
+                        "workingDay": true,
+                        "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                        "createdOn": "2015-07-28T15:56:19.697+02:00"
+                    }, 
+                    {
+                        "dayName": "mercredi",
+                        "dayId": 2,
+                        "startHour": "08:00",
+                        "endHour": "17:00",
+                        "description": "Horaire du mercredi",
+                        "_id": "55b78a03985aae980b1ab8e4",
+                        "workingDay": true,
+                        "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                        "createdOn": "2015-07-28T15:56:19.697+02:00"
+                    }, 
+                    {
+                        "dayName": "jeudi",
+                        "dayId": 3,
+                        "startHour": "08:00",
+                        "endHour": "17:00",
+                        "description": "Horaire du jeudi",
+                        "_id": "55b78a03985aae980b1ab8e5",
+                        "workingDay": true,
+                        "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                        "createdOn": "2015-07-28T15:56:19.697+02:00"
+                    }, 
+                    {
+                        "dayName": "vendredi",
+                        "dayId": 4,
+                        "startHour": "08:00",
+                        "endHour": "17:00",
+                        "description": "Horaire du vendredi",
+                        "_id": "55b78a03985aae980b1ab8e6",
+                        "workingDay": true,
+                        "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                        "createdOn": "2015-07-28T15:56:19.697+02:00"
+                    }, 
+                    {
+                        "dayName": "samedi",
+                        "dayId": 5,
+                        "description": "Fermé le samedi",
+                        "_id": "55b78a03985aae980b1ab8e7",
+                        "workingDay": false,
+                        "updatedOn": "2015-07-28T15:56:19.698+02:00",
+                        "createdOn": "2015-07-28T15:56:19.698+02:00"
+                    }, 
+                    {
+                        "dayName": "dimanche",
+                        "dayId": 6,
+                        "description": "Fermé le dimanche",
+                        "_id": "55b78a03985aae980b1ab8e8",
+                        "workingDay": false,
+                        "updatedOn": "2015-07-28T15:56:19.698+02:00",
+                        "createdOn": "2015-07-28T15:56:19.698+02:00"
+                    }
+                ]
+              }
 
 /{businessId}/schedules/{scheduleId}:
   get:
     is: [auth: {roles: 'staff'} ]
     description: Obtenir une tranche horaire spécifique pour ce salon.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "horaire": 
+                {
+                  "dayName": "vendredi",
+                  "dayId": 4,
+                  "startHour": "08:00",
+                  "endHour": "17:00",
+                  "description": "Horaire du vendredi",
+                  "_id": "55b78a03985aae980b1ab8e6",
+                  "workingDay": true,
+                  "updatedOn": "2015-07-28T15:56:19.697+02:00",
+                  "createdOn": "2015-07-28T15:56:19.697+02:00"
+                }
+              }
   put:
     is: [auth: {roles: 'staff'} ]
     description: Modifier une tranche horaire de ce salon.
+    body:
+      application/json:
+        example: |
+          {
+            "dayName": "lundi",
+            "startHour": "08:00",
+            "endHour": "17:00",
+            "description": "Horaire du lundi",
+            "workingDay": true
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "message": "L'horaire a été modifié avec succès.",
+                "horaire":
+                {
+                    "_id": "55b78a03985aae980b1ab8e2",
+                    "dayName": "lundi",
+                    "dayId": 0,
+                    "startHour": "08:00",
+                    "endHour": "17:00",
+                    "description": "Horaire du lundi",
+                    "workingDay": true,
+                    "updatedOn": "2015-07-28T15:56:19.696+02:00",
+                    "createdOn": "2015-07-28T15:56:19.696+02:00"
+                }
+              }
   delete:
     is: [auth: {roles: 'staff'} ]
     description: Supprimer une tranche horaire de ce salon.
+    responses:
+      204:
+        body:
+          application/json:
+            example: |
+              {
+                "message": "L'horaire a été correctement supprimé du salon."
+              }
 
 # Routes "Staffs"
 /{businessId}/staffs:
   get:
     description: Obtenir une liste de personnel pour ce salon.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                staffs: 
+                [
+                  {
+                      "_id": "55b787a2888c2664199ad8d0",
+                      "name": "Staff 1",
+                      "businessId": "55b785fad9550b8815e18b51",
+                      "staffContact": {
+                          "email": "staff@staff.com",
+                          "mobile": "+41.0000000",
+                          "phone": "+41.0000001"
+                      },
+                      "updatedOn": "2015-07-28T15:46:10.333+02:00",
+                      "createdOn": "2015-07-28T15:46:10.329+02:00",
+                      "__v": 0
+                  },
+                  {
+                      "_id": "55b78e8a985aae980b1ab8ef",
+                      "name": "Staff 2",
+                      "businessId": "55b78a03985aae980b1ab8e1",
+                      "staffContact": {
+                          "email": "staff@staff.com",
+                          "mobile": "+41.0000000",
+                          "phone": "+41.0000001"
+                      },
+                      "updatedOn": "2015-07-28T16:15:38.762+02:00",
+                      "createdOn": "2015-07-28T16:15:38.761+02:00",
+                      "__v": 0
+                  }
+                ]
+              }
 
 /{businessId}/staffs/{staffId}:
   get:
     is: [auth: {roles: 'staff'} ]
     description: Obtenir un membre du personnel spécifique à un salon.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                staff: {
+                  {
+                      "_id": "55b787a2888c2664199ad8d0",
+                      "name": "Staff 1",
+                      "businessId": "55b785fad9550b8815e18b51",
+                      "staffContact": {
+                          "email": "staff@staff.com",
+                          "mobile": "+41.0000000",
+                          "phone": "+41.0000001"
+                      },
+                      "updatedOn": "2015-07-28T15:46:10.333+02:00",
+                      "createdOn": "2015-07-28T15:46:10.329+02:00",
+                      "__v": 0
+                  }
+                }
+              }
 
 # Routes "Prestations"
 /{businessId}/prestations:
   get:
     description: Obtenir la liste de prestation de ce salon.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                prestations: [
+                  {
+                      "_id": "55af4eeddfdfb9a81d47c513",
+                      "name": "Couleur",
+                      "description": "description de la prestation",
+                      "businessId": "558d4eeea91e997c16c3c44f",
+                      "prices": [ 
+                          {
+                              "_id": "55bb781273b718ec1c5595dd",
+                              "gender": "mixte",
+                              "price": 10,
+                              "ageHighLimit": 17,
+                              "ageLowLimit": 1,
+                              "categoryName": "Enfants"
+                          }, 
+                          {
+                              "_id": "55bb782773b718ec1c5595de",
+                              "gender": "mixte",
+                              "price": 20,
+                              "ageHighLimit": 27,
+                              "ageLowLimit": 18,
+                              "categoryName": "Etudiants"
+                          }, 
+                          {
+                              "_id": "55bb784073b718ec1c5595df",
+                              "gender": "femme",
+                              "price": 40,
+                              "ageHighLimit": 99,
+                              "ageLowLimit": 28,
+                              "categoryName": "Adultes, Femmes"
+                          }, 
+                          {
+                              "_id": "55bb7ae073b718ec1c5595e0",
+                              "gender": "homme",
+                              "price": 35,
+                              "ageHighLimit": 99,
+                              "ageLowLimit": 28,
+                              "categoryName": "Adultes, Hommes"
+                          }
+                      ],
+                      "duration": 25,
+                      "updatedOn": "2015-07-31T15:40:48.677+02:00",
+                      "createdOn": "2015-07-22T10:06:05.828+02:00",
+                      "__v": 81
+                  },
+                  {
+                      "_id": "55af4eeddfdfb9a81d47c513",
+                      "name": "Couleur",
+                      "description": "description de la prestation",
+                      "businessId": "558d4eeea91e997c16c3c44f",
+                      "prices": [ 
+                          {
+                              "_id": "55bb781273b718ec1c5595dd",
+                              "gender": "mixte",
+                              "price": 10,
+                              "ageHighLimit": 17,
+                              "ageLowLimit": 1,
+                              "categoryName": "Enfants"
+                          }, 
+                          {
+                              "_id": "55bb782773b718ec1c5595de",
+                              "gender": "mixte",
+                              "price": 20,
+                              "ageHighLimit": 27,
+                              "ageLowLimit": 18,
+                              "categoryName": "Etudiants"
+                          }, 
+                          {
+                              "_id": "55bb784073b718ec1c5595df",
+                              "gender": "femme",
+                              "price": 40,
+                              "ageHighLimit": 99,
+                              "ageLowLimit": 28,
+                              "categoryName": "Adultes, Femmes"
+                          }, 
+                          {
+                              "_id": "55bb7ae073b718ec1c5595e0",
+                              "gender": "homme",
+                              "price": 35,
+                              "ageHighLimit": 99,
+                              "ageLowLimit": 28,
+                              "categoryName": "Adultes, Hommes"
+                          }
+                      ],
+                      "duration": 25,
+                      "updatedOn": "2015-07-31T15:40:48.677+02:00",
+                      "createdOn": "2015-07-22T10:06:05.828+02:00",
+                      "__v": 81
+                  }
+                ]
+              }
   post:
     is: [auth: {roles: 'staff'} ]
     description: Créer une nouvelle prestation pour ce salon.
+    body:
+      application/json:
+        example: |
+          {
+            "name": "prestation",
+            "description": "Une description à lire",
+            "duration": 5
+          }
+    responses:
+      201:
+        body:
+          application/json:
+            example: |
+              {
+                "message": "La prestation a été ajoutée avec succès. <br/> Les prix sont modifiable via le menu de gestion des prestations.",
+                "prestation":
+                  {
+                      "_id": "55af4eeddfdfb9a81d47c513",
+                      "name": "prestation",
+                      "description": "Une description à lire",
+                      "businessId": "558d4eeea91e997c16c3c44f",
+                      "prices": [ 
+                          {
+                              "_id": "55bb781273b718ec1c5595dd",
+                              "gender": "mixte",
+                              "price": 10,
+                              "ageHighLimit": 17,
+                              "ageLowLimit": 1,
+                              "categoryName": "Enfants"
+                          }, 
+                          {
+                              "_id": "55bb782773b718ec1c5595de",
+                              "gender": "mixte",
+                              "price": 20,
+                              "ageHighLimit": 27,
+                              "ageLowLimit": 18,
+                              "categoryName": "Etudiants"
+                          }, 
+                          {
+                              "_id": "55bb784073b718ec1c5595df",
+                              "gender": "femme",
+                              "price": 40,
+                              "ageHighLimit": 99,
+                              "ageLowLimit": 28,
+                              "categoryName": "Adultes, Femmes"
+                          }, 
+                          {
+                              "_id": "55bb7ae073b718ec1c5595e0",
+                              "gender": "homme",
+                              "price": 35,
+                              "ageHighLimit": 99,
+                              "ageLowLimit": 28,
+                              "categoryName": "Adultes, Hommes"
+                          }
+                      ],
+                      "duration": 5,
+                      "updatedOn": "2015-07-31T15:40:48.677+02:00",
+                      "createdOn": "2015-07-22T10:06:05.828+02:00",
+                      "__v": 1
+                  }
+              }
 
 /{businessId}/prestations/{prestationId}:
   get:
     is: [auth: {roles: 'staff'} ]
     description: Obtenir une prestation spécifique à ce salon.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "prestation":
+                  {
+                      "_id": "55af4eeddfdfb9a81d47c513",
+                      "name": "prestation",
+                      "description": "Une description à lire",
+                      "businessId": "558d4eeea91e997c16c3c44f",
+                      "prices": [ 
+                          {
+                              "_id": "55bb781273b718ec1c5595dd",
+                              "gender": "mixte",
+                              "price": 10,
+                              "ageHighLimit": 17,
+                              "ageLowLimit": 1,
+                              "categoryName": "Enfants"
+                          }, 
+                          {
+                              "_id": "55bb782773b718ec1c5595de",
+                              "gender": "mixte",
+                              "price": 20,
+                              "ageHighLimit": 27,
+                              "ageLowLimit": 18,
+                              "categoryName": "Etudiants"
+                          }, 
+                          {
+                              "_id": "55bb784073b718ec1c5595df",
+                              "gender": "femme",
+                              "price": 40,
+                              "ageHighLimit": 99,
+                              "ageLowLimit": 28,
+                              "categoryName": "Adultes, Femmes"
+                          }, 
+                          {
+                              "_id": "55bb7ae073b718ec1c5595e0",
+                              "gender": "homme",
+                              "price": 35,
+                              "ageHighLimit": 99,
+                              "ageLowLimit": 28,
+                              "categoryName": "Adultes, Hommes"
+                          }
+                      ],
+                      "duration": 5,
+                      "updatedOn": "2015-07-31T15:40:48.677+02:00",
+                      "createdOn": "2015-07-22T10:06:05.828+02:00",
+                      "__v": 1
+                  }
+              }
   put:
     is: [auth: {roles: 'staff'} ]
     description: Modifier une prestation de ce salon.
+    body:
+      application/json:
+        example: |
+          {
+            "name": "nouveau nom de prestation",
+            "description": "nouvelle description",
+            "duration": 10
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "message": "La prestation a été modifiée avec succès. <br/> Les prix sont modifiable via le menu de gestion des prestations.",
+                "prestation":
+                  {
+                      "_id": "55af4eeddfdfb9a81d47c513",
+                      "name": "nouveau nom de prestation",
+                      "description": "nouvelle description",
+                      "businessId": "558d4eeea91e997c16c3c44f",
+                      "prices": [ 
+                          {
+                              "_id": "55bb781273b718ec1c5595dd",
+                              "gender": "mixte",
+                              "price": 10,
+                              "ageHighLimit": 17,
+                              "ageLowLimit": 1,
+                              "categoryName": "Enfants"
+                          }, 
+                          {
+                              "_id": "55bb782773b718ec1c5595de",
+                              "gender": "mixte",
+                              "price": 20,
+                              "ageHighLimit": 27,
+                              "ageLowLimit": 18,
+                              "categoryName": "Etudiants"
+                          }, 
+                          {
+                              "_id": "55bb784073b718ec1c5595df",
+                              "gender": "femme",
+                              "price": 40,
+                              "ageHighLimit": 99,
+                              "ageLowLimit": 28,
+                              "categoryName": "Adultes, Femmes"
+                          }, 
+                          {
+                              "_id": "55bb7ae073b718ec1c5595e0",
+                              "gender": "homme",
+                              "price": 35,
+                              "ageHighLimit": 99,
+                              "ageLowLimit": 28,
+                              "categoryName": "Adultes, Hommes"
+                          }
+                      ],
+                      "duration": 10,
+                      "updatedOn": "2015-07-31T15:40:48.677+02:00",
+                      "createdOn": "2015-07-22T10:06:05.828+02:00",
+                      "__v": 1
+                  }
+              }
   delete:
     is: [auth: {roles: 'staff'} ]
     description: Supprimer une prestation de ce salon.
+    responses:
+      204:
+        body:
+          application/json:
+            example: |
+              {
+                "message": "La prestation a été supprimée avec succès."
+              }
 
 # Routes "Prix"
 /{businessId}/prestations/{prestationId}/prices:
   post:
     is: [auth: {roles: 'staff'} ]
     description: Ajouter une catégorie de prix à cette prestation de ce salon.
+    body:
+      application/json:
+        example: |
+          {
+            "categoryName": "prix par defaut",
+            "ageLowLimit": 1,
+            "ageHighLimit": 99,
+            "price": 25,
+            "gender": mixte
+          }
+    responses:
+      201:
+        body:
+          application/json:
+            example: |
+              {
+                "message": "Le prix a été correctement ajouté à votre prestation.",
+                "prestation":
+                  {
+                      "_id": "55af4eeddfdfb9a81d47c513",
+                      "name": "nouveau nom de prestation",
+                      "description": "nouvelle description",
+                      "businessId": "558d4eeea91e997c16c3c44f",
+                      "prices": [ 
+                          {
+                              "_id": "55bb781273b718ec1c5595dd",
+                              "gender": "mixte",
+                              "price": 25,
+                              "ageHighLimit": 99,
+                              "ageLowLimit": 1,
+                              "categoryName": "prix par défaut"
+                          }
+                      ],
+                      "duration": 10,
+                      "updatedOn": "2015-07-31T15:40:48.677+02:00",
+                      "createdOn": "2015-07-22T10:06:05.828+02:00",
+                      "__v": 1
+                  }
+              }
+
 
 /{businessId}/prestations/{prestationId}/prices/{priceId}:
   get:
     is: [auth: {roles: 'staff'} ]
     description: Obtenir une categorie de prix spécifique à cette prestation de ce salon.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "price": {
+                  "_id": "55bb781273b718ec1c5595dd",
+                  "gender": "mixte",
+                  "price": 25,
+                  "ageHighLimit": 99,
+                  "ageLowLimit": 1,
+                  "categoryName": "prix par défaut"
+                }
+              }
   put:
     is: [auth: {roles: 'staff'} ]
     description: Modifier une catégorie de prix à cette prestation de ce salon.
+    body:
+      application/json:
+        example: |
+          {
+            "categoryName": "prix modifié",
+            "ageLowLimit": 1,
+            "ageHighLimit": 99,
+            "price": 35,
+            "gender": mixte
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "message": "Le prix a été correctement modifié pour la prestation souhaitée.",
+                "prestation": 
+                  {
+                      "_id": "55af4eeddfdfb9a81d47c513",
+                      "name": "nouveau nom de prestation",
+                      "description": "nouvelle description",
+                      "businessId": "558d4eeea91e997c16c3c44f",
+                      "prices": [ 
+                          {
+                              "_id": "55bb781273b718ec1c5595dd",
+                              "categoryName": "prix modifié",
+                              "ageLowLimit": 1,
+                              "ageHighLimit": 99,
+                              "price": 35,
+                              "gender": mixte
+                          }
+                      ],
+                      "duration": 10,
+                      "updatedOn": "2015-07-31T15:40:48.677+02:00",
+                      "createdOn": "2015-07-22T10:06:05.828+02:00",
+                      "__v": 1
+                  }
+              }
   delete:
     is: [auth: {roles: 'staff'} ]
     description: Supprimer une catégorie de prix à cette prestation de ce salon.
+    responses:
+      204:
+        body:
+          application/json:
+            example: |
+              {
+                "message": "Le prix a été correctement supprimé de la prestation souhaitée.",
+                "prestation":
+                  {
+                      "_id": "55af4eeddfdfb9a81d47c513",
+                      "name": "nouveau nom de prestation",
+                      "description": "nouvelle description",
+                      "businessId": "558d4eeea91e997c16c3c44f",
+                      "prices": [],
+                      "duration": 10,
+                      "updatedOn": "2015-07-31T15:40:48.677+02:00",
+                      "createdOn": "2015-07-22T10:06:05.828+02:00",
+                      "__v": 1
+                  }
+              }
 
 # Routes "Rendezvous"
 /{businessId}/rendezvous:
   get:
     is: [auth: {roles: 'staff'} ]
     description: Obtenir une liste de rendez-vous de ce salon.
+    body:
+      application/json:
+        example: |
+          {
+            rendezvous:
+            [
+              {
+                  "_id" : "55af4f41dfdfb9a81d47c516",
+                  "startHour" : "2015-07-23T16:00:00.000+02:00",
+                  "endHour" : "2015-07-23T17:00:00.000+02:00",
+                  "prestation" : {
+                      "prestationRdvId" : "55af4f41dfdfb9a81d47c515",
+                      "prestationRdvName" : "Prestation 1"
+                  },
+                  "staff" : {
+                      "staffId" : "558d5010a91e997c16c3c457",
+                      "staffName" : "Staff 1"
+                  },
+                  "client" : {
+                      "clientId" : "5593b7da166f65981ccf5cfa",
+                      "clientName" : "Client 1"
+                  },
+                  "business" : {
+                      "businessId" : "558d4eeea91e997c16c3c44f",
+                      "businessName" : "Le salon de l'admin"
+                  },
+                  "updatedOn" : "2015-07-22T10:07:29.277+02:00",
+                  "createdOn" : "2015-07-22T10:07:29.269+02:00",
+                  "__v" : 0
+              },
+              {
+                  "_id" : "55b4ca8b3fee57d41e618dc0",
+                  "startHour" : "2015-07-24T08:00:00.000+02:00",
+                  "endHour" : "2015-07-24T08:25:00.000+02:00",
+                  "prestation" : {
+                      "prestationRdvId" : "55b4ca8b3fee57d41e618dbf",
+                      "prestationRdvName" : "Prestation 2"
+                  },
+                  "staff" : {
+                      "staffId" : "558d5010a91e997c16c3c457",
+                      "staffName" : "Staff 2"
+                  },
+                  "client" : {
+                      "clientId" : "5591b458f5adf5e81f9f30e4",
+                      "clientName" : "Client 2"
+                  },
+                  "business" : {
+                      "businessId" : "558d4eeea91e997c16c3c44f",
+                      "businessName" : "Le salon de l'admin"
+                  },
+                  "updatedOn" : "2015-07-26T13:54:51.189+02:00",
+                  "createdOn" : "2015-07-26T13:54:51.177+02:00",
+                  "__v" : 0
+              }
+            ]
+          }
   post:
     is: [auth: {roles: 'staff'} ]
     description: Ajouter un rendez-vous en tant que staff de ce salon.
+    body:
+      application/json:
+        example: |
+          {
+            "clientId": "558d4dfda91e997c16c3c44e",
+            "prestationId": "558d6a91554ddff81cadbc68",
+            "startHour": "2015-06-27T16:20:00.000Z",
+            "endHour": "2015-06-27T17:10:00.000Z",
+            "staffName": "Staff 1",
+            "staffId": "5591b458f5adf5e81f9f30e4"
+          }
+    responses:
+      201:
+        body:
+          application/json:
+            example: |
+              {
+                "message": "Votre rendez-vous a été enregistré avec succès."
+              }
 
 /{businessId}/rendezvous/{rdvId}:
   get:
     is: [auth: {roles: 'staff'} ]
     description: Obtenir un rendez-vous spécifique de ce salon.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "rendezvous": 
+                {
+                  "_id" : "55b4ca8b3fee57d41e618dc0",
+                  "startHour" : "2015-07-24T08:00:00.000+02:00",
+                  "endHour" : "2015-07-24T08:25:00.000+02:00",
+                  "prestation" : {
+                      "prestationRdvId" : "55b4ca8b3fee57d41e618dbf",
+                      "prestationRdvName" : "Prestation 2"
+                  },
+                  "staff" : {
+                      "staffId" : "558d5010a91e997c16c3c457",
+                      "staffName" : "Staff 2"
+                  },
+                  "client" : {
+                      "clientId" : "5591b458f5adf5e81f9f30e4",
+                      "clientName" : "Client 2"
+                  },
+                  "business" : {
+                      "businessId" : "558d4eeea91e997c16c3c44f",
+                      "businessName" : "Le salon de l'admin"
+                  }
+                }
+              }
 
 /{businessId}/rendezvous/search:
   post:
     description: Obtenir une liste de rendez-vous pour ce salon selon les critère de recherche.
+    body:
+      application/json:
+        example: |
+          {
+            "staffId": "558d5010a91e997c16c3c457",
+            "startHour": "2015-07-24T00:00:00.000+02:00",
+            "endHour": "2015-07-31T00:00:00.000+02:00"
+          }
+    responses:
+      201:
+        body:
+          application/json:
+            example: |
+              {
+                "rendezvous": 
+                [
+                  {
+                    "_id" : "55b4ca8b3fee57d41e618dc0",
+                    "startHour" : "2015-07-24T08:00:00.000+02:00",
+                    "endHour" : "2015-07-24T08:25:00.000+02:00",
+                    "prestation" : {
+                        "prestationRdvId" : "55b4ca8b3fee57d41e618dbf",
+                        "prestationRdvName" : "Prestation 2"
+                    },
+                    "staff" : {
+                        "staffId" : "558d5010a91e997c16c3c457",
+                        "staffName" : "Staff 2"
+                    },
+                    "client" : {
+                        "clientId" : "5591b458f5adf5e81f9f30e4",
+                        "clientName" : "Client 2"
+                    },
+                    "business" : {
+                        "businessId" : "558d4eeea91e997c16c3c44f",
+                        "businessName" : "Le salon de l'admin"
+                    }
+                ]
+              }
 
 # Routes "Notifications"
 /{businessId}/notifications:
   get:
     is: [auth: {roles: 'staff'} ]
     description: Obtenir une liste de rendez-vous de ce salon.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                notifications: 
+                [
+                  {
+                    "_id" : "55a65e56c61db93c1e6eb8ff",
+                    "title" : "Ajout du rôle staff",
+                    "text" : "Acceptes ou refuses cette demande.",
+                    "business" : {
+                        "businessId" : "558d4eeea91e997c16c3c44f",
+                        "businessName" : "Le salon de l'admin"
+                    },
+                    "status" : "not processed",
+                    "isViewed" : false,
+                    "sentTo" : {
+                        "receptorId" : "558fb21b53fda6840be06706",
+                        "receptorName" : "Utilisateur 1"
+                    },
+                    "sentBy" : {
+                        "emitterId" : "5591b95eaa39a54415a53bfb",
+                        "emitterName" : "Staff 1"
+                    },
+                    "updatedOn" : "2015-07-15T15:21:26.010+02:00",
+                    "createdOn" : "2015-07-15T15:21:26.010+02:00",
+                    "__v" : 0
+                  }
+                ]
+              }
 
   post:
     is: [auth: {roles: 'staff'} ]
     description: Créer une notification pour ce salon.
+    body:
+      application/json:
+        example: |
+          {
+            "receptorId": "558fb21b53fda6840be06706"
+          }
+    responses:
+      201:
+        body:
+          application/json:
+            example: |
+              {
+                message: "La notification fut envoyée avec succès pour le salon : Le salon de l'admin",
+                "notification":
+                {
+                  "_id" : "55a65e56c61db93c1e6eb8ff",
+                  "title" : "Ajout du rôle staff",
+                  "text" : "Acceptes ou refuses cette demande.",
+                  "business" : {
+                      "businessId" : "558d4eeea91e997c16c3c44f",
+                      "businessName" : "Le salon de l'admin"
+                  },
+                  "status" : "not processed",
+                  "isViewed" : false,
+                  "sentTo" : {
+                      "receptorId" : "558fb21b53fda6840be06706",
+                      "receptorName" : "Utilisateur 1"
+                  },
+                  "sentBy" : {
+                      "emitterId" : "5591b95eaa39a54415a53bfb",
+                      "emitterName" : "Staff 1"
+                  },
+                  "updatedOn" : "2015-07-15T15:21:26.010+02:00",
+                  "createdOn" : "2015-07-15T15:21:26.010+02:00",
+                  "__v" : 0
+                }
+              }
 
 
 /{businessId}/notifications/{notifId}:
   delete:
     is: [auth: {roles: 'staff'} ]
     description: Supprimer une notification de ce salon.
+    responses:
+      204:
+        body:
+          application/json:
+            example: |
+              {
+                "message": "La notification a été supprimée avec succès."
+              }

@@ -3,22 +3,114 @@ description: Ressource Notification
 get:
   is: [auth: {roles: 'user'} ]
   description: Obtenir une liste de notifications.
+  responses:
+    200:
+      body:
+        application/json:
+          example: |
+            {
+                "_id": "55a65e56c61db93c1e6eb8ff",
+                "title": "Ajout du rôle staff",
+                "text": "Acceptes ou refuses cette demande.",
+                "business": {
+                    "businessId": "558d4eeea91e997c16c3c44f",
+                    "businessName": "Le salon de l'admin"
+                },
+                "status": "accepted",
+                "isViewed": true,
+                "sentTo": {
+                    "receptorId": "5593b7da166f65981ccf5cfa",
+                    "receptorName": "Laurent Lienher"
+                },
+                "sentBy": {
+                    "emitterId": "5591b95eaa39a54415a53bfb",
+                    "emitterName": "Staff de test"
+                },
+                "updatedOn": "2015-07-15T18:53:02.035+02:00",
+                "createdOn": "2015-07-15T15:21:26.010+02:00",
+                "__v": 0
+            }
 
 /{id}:
   get:
     is: [auth: {roles: 'user'} ]
     description: Obtenir une notification spécifique.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                  "_id": "55a65e56c61db93c1e6eb8ff",
+                  "title": "Ajout du rôle staff",
+                  "text": "Acceptes ou refuses cette demande.",
+                  "business": {
+                      "businessId": "558d4eeea91e997c16c3c44f",
+                      "businessName": "Le salon de l'admin"
+                  },
+                  "status": "accepted",
+                  "isViewed": false,
+                  "sentTo": {
+                      "receptorId": "5593b7da166f65981ccf5cfa",
+                      "receptorName": "Laurent Lienher"
+                  },
+                  "sentBy": {
+                      "emitterId": "5591b95eaa39a54415a53bfb",
+                      "emitterName": "Staff de test"
+                  },
+                  "updatedOn": "2015-07-15T18:53:02.035+02:00",
+                  "createdOn": "2015-07-15T15:21:26.010+02:00",
+                  "__v": 0
+              }
   delete:
     is: [auth: {roles: 'user'} ]
     description: Supprimer une notification.
+    responses:
+      204:
+        body:
+          application/json:
+            example: |
+              {
+                "message": "La notification a été supprimée avec succès."
+              }
 
 
 /{id}/accepted:
   put:
     is: [auth: {roles: 'user'} ]
     description: Accepter une notification.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "message": "Le status de la notification a été mit à jours avec succès: accepted"
+              }
+      403:
+        body:
+          application/json:
+            example: |
+              {
+                "message": "Vous avez déjà traité cette demande."
+              }
 
 /{id}/refused:
   put:
     is: [auth: {roles: 'user'} ]
     description: Refuser une notification.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "message": "Le status de la notification a été mit à jours avec succès: refused"
+              }
+      403:
+        body:
+          application/json:
+            example: |
+              {
+                "message": "Vous avez déjà traité cette demande."
+              }

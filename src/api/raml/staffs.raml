@@ -40,7 +40,13 @@ post:
           application/json:
             example: |
               {
-                
+                "_id": "558d4eeea91e997c16c3c45d",
+                "name": "Nom du staff",
+                "email": "work@email.com",
+                "phone": "+41 79 123 45 67",
+                "mobile": "+41 79 123 45 67",
+                "photoStaffURL": "businessPlaceholder.png",
+                "businessId": "558d4eeea91e997c16c3c44f"
               }
   put:
     is: [auth: {roles: 'staff'} ]
@@ -52,7 +58,7 @@ post:
             "name": "Staff profile name",
             "phone": "+41 79 123 45 67",
             "mobile": "+41 79 123 45 67",
-            "email": "Neuchâtel",
+            "email": "work@email.com",
             "photoStaffURL": "businessPlaceholder.png"
           }
     responses:
@@ -60,7 +66,18 @@ post:
         body:
           application/json:
             example: |
-              {}
+              {
+                "message": "Votre profil staff a été correctement modifié.",
+                "staff": {
+                  "_id": "558d4eeea91e997c16c3c45d",
+                  "name": "Nom du staff",
+                  "email": "work@email.com",
+                  "phone": "+41 79 123 45 67",
+                  "mobile": "+41 79 123 45 67",
+                  "photoStaffURL": "businessPlaceholder.png",
+                  "businessId": "558d4eeea91e997c16c3c44f"
+                }
+              }
 
 /{staffId}:
   get:
@@ -70,4 +87,11 @@ post:
         body:
           application/json:
             example: |
-              {}
+              {
+                "_id": "558d4eeea91e997c16c3c45d",
+                "name": "Nom du staff",
+                "email": "work@email.com",
+                "phone": "+41 79 123 45 67",
+                "mobile": "+41 79 123 45 67",
+                "photoStaffURL": "businessPlaceholder.png"
+              }
