@@ -1,7 +1,163 @@
 description: Ressource Rendezvous
 get:
+    is: [auth: {roles: 'user'} ]
+    description: Obtenir une liste de ses rendez-vous.
+    responses:
+        200:
+            body:
+                application/json:
+                    example: |
+                        {
+                          rendezvous:
+                          [
+                            {
+                                "_id" : "55af4f41dfdfb9a81d47c516",
+                                "startHour" : "2015-07-23T16:00:00.000+02:00",
+                                "endHour" : "2015-07-23T17:00:00.000+02:00",
+                                "prestation" : {
+                                    "prestationRdvId" : "55af4f41dfdfb9a81d47c515",
+                                    "prestationRdvName" : "Prestation 1"
+                                },
+                                "staff" : {
+                                    "staffId" : "558d5010a91e997c16c3c457",
+                                    "staffName" : "Staff 1"
+                                },
+                                "client" : {
+                                    "clientId" : "5593b7da166f65981ccf5cfa",
+                                    "clientName" : "Client 1"
+                                },
+                                "business" : {
+                                    "businessId" : "558d4eeea91e997c16c3c44f",
+                                    "businessName" : "Le salon de l'admin"
+                                },
+                                "updatedOn" : "2015-07-22T10:07:29.277+02:00",
+                                "createdOn" : "2015-07-22T10:07:29.269+02:00",
+                                "__v" : 0
+                            },
+                            {
+                                "_id" : "55b4ca8b3fee57d41e618dc0",
+                                "startHour" : "2015-07-24T08:00:00.000+02:00",
+                                "endHour" : "2015-07-24T08:25:00.000+02:00",
+                                "prestation" : {
+                                    "prestationRdvId" : "55b4ca8b3fee57d41e618dbf",
+                                    "prestationRdvName" : "Prestation 2"
+                                },
+                                "staff" : {
+                                    "staffId" : "558d5010a91e997c16c3c457",
+                                    "staffName" : "Staff 2"
+                                },
+                                "client" : {
+                                    "clientId" : "5591b458f5adf5e81f9f30e4",
+                                    "clientName" : "Client 2"
+                                },
+                                "business" : {
+                                    "businessId" : "558d4eeea91e997c16c3c44f",
+                                    "businessName" : "Le salon de l'admin"
+                                },
+                                "updatedOn" : "2015-07-26T13:54:51.189+02:00",
+                                "createdOn" : "2015-07-26T13:54:51.177+02:00",
+                                "__v" : 0
+                            }
+                          ]
+                        }
+
 post:
+    is: [auth: {roles: 'user'} ]
+    description: Créer un rendez-vous.
+    body:
+        application/json:
+            example: |
+                {
+                  "businessId": "558d4eeea91e997c16c3c44f",
+                  "prestationId": "558d6a91554ddff81cadbc68",
+                  "startHour": "2015-06-27T16:20:00.000Z",
+                  "endHour": "2015-06-27T17:10:00.000Z",
+                  "staffName": "Staff 1",
+                  "staffId": "5591b458f5adf5e81f9f30e4"
+                }
+    responses:
+        201:
+            body:
+                application/json:
+                    example: |
+                        {
+                        	"message": "Votre rendez-vous a été enregistré avec succès."
+                        }
 
 /{id}:
   get:
-  delete:
+    is: [auth: {roles: 'user'} ]
+    description: obtenir un rendez-vous spécifique.
+    responses:
+        200:
+            body:
+                application/json:
+                    example: |
+                        {
+                          rendezvous:
+                            {
+                                "_id" : "55af4f41dfdfb9a81d47c516",
+                                "startHour" : "2015-07-23T16:00:00.000+02:00",
+                                "endHour" : "2015-07-23T17:00:00.000+02:00",
+                                "prestation" : {
+                                    "prestationRdvId" : "55af4f41dfdfb9a81d47c515",
+                                    "prestationRdvName" : "Prestation 1"
+                                },
+                                "staff" : {
+                                    "staffId" : "558d5010a91e997c16c3c457",
+                                    "staffName" : "Staff 1"
+                                },
+                                "client" : {
+                                    "clientId" : "5593b7da166f65981ccf5cfa",
+                                    "clientName" : "Client 1"
+                                },
+                                "business" : {
+                                    "businessId" : "558d4eeea91e997c16c3c44f",
+                                    "businessName" : "Le salon de l'admin"
+                                },
+                                "updatedOn" : "2015-07-22T10:07:29.277+02:00",
+                                "createdOn" : "2015-07-22T10:07:29.269+02:00",
+                                "__v" : 0
+                            },
+                            {
+                                "_id" : "55b4ca8b3fee57d41e618dc0",
+                                "startHour" : "2015-07-24T08:00:00.000+02:00",
+                                "endHour" : "2015-07-24T08:25:00.000+02:00",
+                                "prestation" : {
+                                    "prestationRdvId" : "55b4ca8b3fee57d41e618dbf",
+                                    "prestationRdvName" : "Prestation 2"
+                                },
+                                "staff" : {
+                                    "staffId" : "558d5010a91e997c16c3c457",
+                                    "staffName" : "Staff 2"
+                                },
+                                "client" : {
+                                    "clientId" : "5591b458f5adf5e81f9f30e4",
+                                    "clientName" : "Client 2"
+                                },
+                                "business" : {
+                                    "businessId" : "558d4eeea91e997c16c3c44f",
+                                    "businessName" : "Le salon de l'admin"
+                                },
+                                "updatedOn" : "2015-07-26T13:54:51.189+02:00",
+                                "createdOn" : "2015-07-26T13:54:51.177+02:00",
+                                "__v" : 0
+                            },
+                          detailRdv:
+                            {
+                                "_id" : "55af4f41dfdfb9a81d47c515",
+                                "name" : "Couleur",
+                                "description" : "description de la prestation",
+                                "price" : {
+                                    "categoryName" : "Prix par défaut",
+                                    "gender" : "mixte",
+                                    "price" : 25,
+                                    "ageHighLimit" : 99,
+                                    "ageLowLimit" : 0
+                                },
+                                "duration" : 60,
+                                "updatedOn" : "2015-07-22T10:07:29.271+02:00",
+                                "createdOn" : "2015-07-22T10:07:29.266+02:00",
+                                "__v" : 0
+                            }
+                        }
