@@ -2,25 +2,6 @@
 
 *Documentation of the API of TB2015 - Booking Prototype*
 
-This is a generator that compiles [Markdown][md] and [RAML][raml] files into a
-static site. The following [Node.js][node] stack is used:
-
- - Build tasks using [Grunt][grunt]
- - Content assembling with [Metalsmith][metalsmith]
- - Templating using [Jade][jade]
- - CSS-preprocessing with [Stylus][stylus]
- - Basic styling using [Twitter Bootstrap][bootstrap]
-
-Note that apart from Markdown support within the RAML spec it also supports
-plain `.md` files that are compiled independently from the API documentation.
-
-## Quickstart
-
-### Prerequisites
-
-  - Make sure [Node.js][node] is installed and in your `PATH`
-  - Install Grunt: `npm install -g grunt-cli`
-
 ### Installation
 
   1. Clone the repo.
